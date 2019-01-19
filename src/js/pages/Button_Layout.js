@@ -1,5 +1,5 @@
 import React from "react"
-import { render } from 'react-dom';
+
 import NaviButton from "../components/NaviButton"
 import MusicButton from "../components/MusicButton"
 import AppButton from "../components/AppButton"
@@ -7,40 +7,51 @@ import Button from 'react-bootstrap/lib/Button';
 
 import CircularProgressbar from 'react-circular-progressbar';
 import Speedometer from '../components/Speedometer';
+const percentage = 66;
 
  //require ('../../stylesheet/_all.scss');
  const divStyle = {
   boxSizing: 'border-box',
   paddingTop: '20px'
 };
-const tachoBoxStyle = {
-  height: '700px',
+const backgroundStyle = {
+  height: '800px',
   //border: '2px'
   backgroundColor: 'gray'
 };
+const tachoStyle = {
+   width: '600px',
+   height: '600px'
+
+}
 const buttonStyle = {
   height: '60px',
   fontSize: '30px',
   fontWeight: 'bold'
+}
+const verticalGridEmptyLine = {
+  height: '50px'
 }
 
  export default class  Layout extends React.Component {
    constructor() {
      super();
    }
+
    render(){
      return(
-
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style={backgroundStyle}>
+    <div class= "row" style={verticalGridEmptyLine}></div>
       <div class="row">
         <div class="col-sm-2"></div>
-          //<div class="col-md-8" style={tachoBoxStyle}></div>
-          <div class="col-md-8">
-              //<Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
-              <div style={{ width: '100px', height: '100px' }}>
-                  <Speedometer percentage={percentage} />
+
+          <div class="col-md-8 col-md-offset-2" >
+              <div style={tachoStyle}>
+                  <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
               </div>
+
+              <div class= "row" style={verticalGridEmptyLine}></div>
           </div>
         <div class="col-sm-2"></div>
       </div>
@@ -62,8 +73,6 @@ const buttonStyle = {
         </div>
     </div>
   </div>
-
-
 
      );
    }

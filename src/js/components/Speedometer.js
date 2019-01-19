@@ -45,8 +45,8 @@ function RadialSeparator(props) {
   return (
     <div
       style={{
-        background: '#fff',
-        width: '3px',
+        background: 'gray',
+        width: '30px',
         height: '100%',
         transform: `rotate(${props.degrees}deg)`,
       }}
@@ -76,7 +76,7 @@ function Speedometer(props) {
       }}
       renderOverlays={() =>
         getRadialSeparators(20).concat(
-          <div style={{ fontSize: 20, color: '#3e98c7' }}>
+          <div style={{ fontSize: 80, color: 'orange' }}>
             {props.percentage}%
           </div>,
         )

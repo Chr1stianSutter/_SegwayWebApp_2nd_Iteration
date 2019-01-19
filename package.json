@@ -24,6 +24,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.26.1",
     "es6-promise": "^4.1.0",
+    "lodash": "^4.17.11",
     "node-sass": "^4.5.0",
     "react": "^15.6.2",
     "react-bootstrap": "^0.32.4",
