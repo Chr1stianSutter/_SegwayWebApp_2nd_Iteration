@@ -46,8 +46,8 @@ function RadialSeparator(props) {
     <div
       style={{
         background: 'gray',
-        width: '30px',
-        height: '100%',
+        width: '10px',
+        height: '650px',
         transform: `rotate(${props.degrees}deg)`,
       }}
     />
@@ -72,6 +72,9 @@ function Speedometer(props) {
       styles={{
         path: {
           strokeLinecap: 'butt',
+          transform: 'rotate(235deg)',
+          transformOrigin: 'center center',
+          stroke: 'orange'
         },
       }}
       renderOverlays={() =>
