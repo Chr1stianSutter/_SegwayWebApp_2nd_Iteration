@@ -65,7 +65,7 @@ function getRadialSeparators(numSeparators) {
   ));
 }
 
-function SegmentedProgressbar(props) {
+function Speedometer(props) {
   return (
     <LayeredProgressbar
       percentage={props.percentage}
@@ -85,4 +85,4 @@ function SegmentedProgressbar(props) {
   );
 }
 
-export default SegmentedProgressbar;
+export default Speedometer;
