@@ -42,6 +42,9 @@ const containerStyle = {
 const colSides ={
   backgroundColor: 'red'
 }
+const vertSpacer ={
+  height: '80px'
+}
 
 
 
@@ -58,13 +61,14 @@ const colSides ={
     <div class="col-md-12" style={backgroundStyle}>
       <div class="container" style ={containerStyle}>
         <div class="row justify-content-center">
+        <div class="row" style={vertSpacer}></div>
 
           <div class="col">
             <div style={tachoStyle}>
               <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
             </div>
           </div>
-
+        <div class="row" style={vertSpacer}></div>
         </div>
       </div>
 
