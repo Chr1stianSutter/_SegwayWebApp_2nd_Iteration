@@ -3,6 +3,7 @@ import NaviButton from "../components/NaviButton"
 import MusicButton from "../components/MusicButton"
 import AppButton from "../components/AppButton"
 import Button from 'react-bootstrap/lib/Button';
+import Speedometer from '../components/Speedometer';
 
  //require ('../../stylesheet/_all.scss');
  const divStyle = {
@@ -31,7 +32,10 @@ const buttonStyle = {
     <div class="col-md-12">
       <div class="row">
         <div class="col-sm-2"></div>
-          <div class="col-md-8" style={tachoBoxStyle}></div>
+          //<div class="col-md-8" style={tachoBoxStyle}></div>
+          <div class="col-md-8">
+              <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
+          </div>
         <div class="col-sm-2"></div>
       </div>
       <div class="row">
