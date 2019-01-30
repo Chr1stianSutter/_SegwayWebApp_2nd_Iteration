@@ -1,3 +1,7 @@
 .red-color {
   color: #db211b;
 }
+.px-5 {
+  padding-left: ($spacer * 5) !important;
+  padding-right: ($spacer * 5) !important;
+}

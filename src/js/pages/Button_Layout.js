@@ -53,12 +53,14 @@ const vertSpacer ={
      super();
    }
 
-
    render(){
      return(
   <div class="row">
 
-    <div class="col-md-12" style={backgroundStyle}>
+    <div class="col-sm-12">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8" style={backgroundStyle}>
+      <div class="col-sm-2"></div>
       <div class="container" style ={containerStyle}>
         <div class="row justify-content-center">
         <div class="row" style={vertSpacer}></div>
@@ -72,21 +74,28 @@ const vertSpacer ={
         </div>
       </div>
 
-      <div class="row">
 
-            <div class="col-sm-2"></div>
-            <div class="col-md-2"  style={divStyle}>
+      <div class="px-5">
+
+
+            <div class="col-sm-3"  style={divStyle}>
                <Button bsStyle="warning" block style={buttonStyle}>NAVI</Button>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-2" style={divStyle}>
+
+            <div class="col-sm-3" style={divStyle}>
                <Button bsStyle="warning" block style={buttonStyle}>MUSIC</Button>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-2" style={divStyle}>
+
+            <div class="col-sm-3" style={divStyle}>
                <Button bsStyle="warning" block style={buttonStyle}>APPS</Button>
             </div>
-            <div class="col-sm-2"></div>
+
+            <div class="col-sm-3" style={divStyle}>
+              <Button bsStyle="warning" block style={buttonStyle}>SETTINGS</Button>
+            </div>
+
+
+        </div>
 
         </div>
 
