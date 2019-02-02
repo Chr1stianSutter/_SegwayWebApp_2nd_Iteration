@@ -15,18 +15,19 @@ const percentage = 70;
   paddingTop: '20px'
 };
 const backgroundStyle = {
-  height: '800px',
+  height: '550px',
+  width:'1040px',
   //border: '2px'
   backgroundColor: 'gray'
 };
 const tachoStyle = {
-   width: '500px',
-   height: '500px',
+   width: '300px',
+   height: '300px',
    //backgroundColor: 'yellow',
    margin: 'auto'
-
-
-
+}
+const gridStyle ={
+  backgroundColor: 'red'
 }
 const buttonStyle = {
   height: '60px',
@@ -34,7 +35,7 @@ const buttonStyle = {
   fontWeight: 'bold'
 }
 const verticalGridEmptyLine = {
-  height: '50px'
+  height: '20px'
 }
 const containerStyle = {
   //backgroundColor: 'blue'
@@ -43,7 +44,7 @@ const colSides ={
   backgroundColor: 'red'
 }
 const vertSpacer ={
-  height: '80px'
+  height: '25px'
 }
 
 
@@ -58,11 +59,13 @@ const vertSpacer ={
   <div class="row">
 
     <div class="col-sm-12">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8" style={backgroundStyle}>
-      <div class="col-sm-2"></div>
+
+      <div class="col-sm-12" style={backgroundStyle}>
+
       <div class="container" style ={containerStyle}>
         <div class="row justify-content-center">
+        <div class="row" style={vertSpacer}></div>
+        <div class="row" style={vertSpacer}></div>
         <div class="row" style={vertSpacer}></div>
 
           <div class="col">
@@ -70,7 +73,9 @@ const vertSpacer ={
               <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
             </div>
           </div>
-        <div class="row" style={vertSpacer}></div>
+              <div class="row" style={vertSpacer}></div>
+              <div class="row" style={vertSpacer}></div>
+              <div class="row" style={vertSpacer}></div>
         </div>
       </div>
 

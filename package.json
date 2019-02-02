@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --inline --content-base ./ --host 192.168.0.234 --port 8080 --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "segway": "webpack-dev-server --content-base src --host 192.168.0.234 --port 8080  --hot"
   },
   "repository": {
     "type": "git",
