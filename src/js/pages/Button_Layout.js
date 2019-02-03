@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/lib/Button';
 
 import CircularProgressbar from 'react-circular-progressbar';
 import Speedometer from '../components/Speedometer';
+import BatteryBar from '../components/BatteryBar';
 const percentage = 70;
 
  //require ('../../stylesheet/_all.scss');
@@ -21,10 +22,29 @@ const backgroundStyle = {
   backgroundColor: 'gray'
 };
 const tachoStyle = {
+  position: 'absolute',
    width: '300px',
    height: '300px',
+   //width: '100%',
+   //height: '100%',
+   //backgroundColor: 'yellow',
+   margin: 'auto',
+   top:'40',
+   left:'40',
+   zIndex:  '10'
+}
+const batteryStyle = {
+   width: '380px',
+   height: '380px',
    //backgroundColor: 'yellow',
    margin: 'auto'
+}
+const tachoContainerSyle = {
+  position: 'relative',
+  width:'380px',
+  height:'380px',
+  margin:'auto'
+
 }
 const gridStyle ={
   backgroundColor: 'red'
@@ -49,6 +69,7 @@ const vertSpacer ={
 
 
 
+
  export default class  Layout extends React.Component {
    constructor() {
      super();
@@ -64,17 +85,18 @@ const vertSpacer ={
 
       <div class="container" style ={containerStyle}>
         <div class="row justify-content-center">
-        <div class="row" style={vertSpacer}></div>
-        <div class="row" style={vertSpacer}></div>
+
         <div class="row" style={vertSpacer}></div>
 
-          <div class="col">
+          <div class="col" style={tachoContainerSyle}>
+            <div style={batteryStyle}>
+              <BatteryBar percentage={percentage} text={`${percentage}%`} />
+            </div>
             <div style={tachoStyle}>
               <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
             </div>
           </div>
-              <div class="row" style={vertSpacer}></div>
-              <div class="row" style={vertSpacer}></div>
+
               <div class="row" style={vertSpacer}></div>
         </div>
       </div>
