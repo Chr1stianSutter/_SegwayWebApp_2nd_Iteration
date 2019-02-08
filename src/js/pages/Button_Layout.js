@@ -3,17 +3,18 @@ import React from "react"
 import NaviButton from "../components/NaviButton"
 import MusicButton from "../components/MusicButton"
 import AppButton from "../components/AppButton"
+import Header from "../components/NaviButton"
 import Button from 'react-bootstrap/lib/Button';
 
 import CircularProgressbar from 'react-circular-progressbar';
 import Speedometer from '../components/Speedometer';
 import BatteryBar from '../components/BatteryBar';
-const percentage = 70;
+const percentage = 80;
 
  //require ('../../stylesheet/_all.scss');
  const divStyle = {
   boxSizing: 'border-box',
-  paddingTop: '20px'
+  //paddingTop: '20px'
 };
 const backgroundStyle = {
   height: '550px',
@@ -50,8 +51,8 @@ const gridStyle ={
   backgroundColor: 'red'
 }
 const buttonStyle = {
-  height: '60px',
-  fontSize: '30px',
+  height: '40px',
+  fontSize: '24px',
   fontWeight: 'bold'
 }
 const verticalGridEmptyLine = {
@@ -106,7 +107,11 @@ const vertSpacer ={
 
 
             <div class="col-sm-3"  style={divStyle}>
-               <Button bsStyle="warning" block style={buttonStyle}>NAVI</Button>
+
+               <Header
+                title="NAVI"
+                bsStyle="warning" block style={buttonStyle}
+               />
             </div>
 
             <div class="col-sm-3" style={divStyle}>

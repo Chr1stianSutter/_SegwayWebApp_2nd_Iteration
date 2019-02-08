@@ -20,7 +20,7 @@ function BatteryBar(props) {
         root: {},
         // Customize the path, i.e. the part that's "complete"
         path: {
-          transform: 'rotate(235deg)',
+          transform: 'rotate(215deg)',
           transformOrigin: 'center center',
           // Tweak path color:
           //stroke: '#f88',
@@ -32,7 +32,7 @@ function BatteryBar(props) {
         // Customize the circle behind the path
         trail: {
           // Tweak the trail color:
-          stroke: '#d6d6d6',
+          stroke: 'gray',
         },
         // Customize the text
 

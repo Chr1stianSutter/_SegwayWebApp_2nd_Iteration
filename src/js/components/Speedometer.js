@@ -72,9 +72,14 @@ function Speedometer(props) {
       styles={{
         path: {
           strokeLinecap: 'butt',
-          transform: 'rotate(235deg)',
+          //transform: 'rotate(235deg)',
+          transform: 'rotate(215deg)',
           transformOrigin: 'center center',
           stroke: 'orange'
+        },
+        trail: {
+          // Tweak the trail color:
+          stroke: 'gray',
         },
       }}
       renderOverlays={() =>
