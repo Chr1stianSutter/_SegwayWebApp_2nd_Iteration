@@ -1,6 +1,8 @@
 import React from "react";
 import Button from 'react-bootstrap/lib/Button';
 import MenuButton from '../components/MenuButton';
+import Layout_FlexBox from '../pages/Layout_FlexBox';
+
 /*
 export default class Header extends React.Component {
 
@@ -22,27 +24,19 @@ class Header extends React.Component {
       this.open_the_menu = this.open_the_menu.bind(this);
   }
   open_the_menu(){
-      this.setState({"show_menu": true})
+      this.setState({"show_menu": true}),
+      Layout_FlexBox.setState({"top":'100px'});
   }
   render(){
       console.log(this.state)
       const style = {
           height: '40px',
-          width: '200px',
           fontSize: '24px',
           fontWeight: 'bold'
       };
       const boxBorderRed ={
 
         border: '1px solid red'
-      };
-
-      const tech = {
-          background: 'orange',
-          color: '#fff',
-          padding: '5px',
-          marginRight: '5px'
-
       };
 
       const buttonStyle = {
@@ -60,9 +54,13 @@ class Header extends React.Component {
       };
 
       const divStyle = {
-       boxSizing: 'border-box',
+       boxSizing: 'border-box'
        //paddingTop: '20px'
      };
+
+
+
+
       return (
           <div style={style}>
               {this.state.show_menu ?
@@ -75,10 +73,11 @@ class Header extends React.Component {
 
                   </p>
                 */
+
                 <div >
                   <div class="col-sm-12" style={boxBorderRed}>
                     <div class="row">
-                        <div class="col-sm-3"style={divStyle}>
+                        <div class="col-sm-3" style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>To Adress</Button>
                         </div>
                     </div>
@@ -97,8 +96,9 @@ class Header extends React.Component {
                   </div>
                 </div>
 
+
                   :
-                  <Button onClick={this.open_the_menu} bsStyle="warning" block style={style } > NAVI </Button>
+                  <Button onClick={this.open_the_menu} bsStyle="warning" block style={style} > NAVI </Button>
               }
           </div>
       );

@@ -1,3 +1,4 @@
+/*
 import React from "react"
 
 import NaviButton from "../components/NaviButton"
@@ -16,6 +17,11 @@ const percentage = 80;
   boxSizing: 'border-box',
   //paddingTop: '20px'
 };
+
+const boxBorderRed ={
+  border: '1px solid red'
+};
+
 const backgroundStyle = {
   height: '550px',
   width:'1040px',
@@ -33,40 +39,40 @@ const tachoStyle = {
    top:'40',
    left:'40',
    zIndex:  '10'
-}
+};
 const batteryStyle = {
    width: '380px',
    height: '380px',
    //backgroundColor: 'yellow',
    margin: 'auto'
-}
+};
 const tachoContainerSyle = {
   position: 'relative',
   width:'380px',
   height:'380px',
   margin:'auto'
 
-}
+};
 const gridStyle ={
   backgroundColor: 'red'
-}
+};
 const buttonStyle = {
   height: '40px',
   fontSize: '24px',
   fontWeight: 'bold'
-}
+};
 const verticalGridEmptyLine = {
   height: '20px'
-}
+};
 const containerStyle = {
   //backgroundColor: 'blue'
-}
+};
 const colSides ={
   backgroundColor: 'red'
-}
+};
 const vertSpacer ={
   height: '25px'
-}
+};
 
 
 
@@ -78,63 +84,66 @@ const vertSpacer ={
 
    render(){
      return(
-  <div class="row">
 
-    <div class="col-sm-12">
+         <div class="row" >
 
-      <div class="col-sm-12" style={backgroundStyle}>
+           <div class="col-sm-12">
 
-      <div class="container" style ={containerStyle}>
-        <div class="row justify-content-center">
+             <div class="col-sm-12" style={backgroundStyle}>
 
-        <div class="row" style={vertSpacer}></div>
+             <div class="container" style ={containerStyle} style={boxBorderRed}>
+               <div class="row justify-content-center">
 
-          <div class="col" style={tachoContainerSyle}>
-            <div style={batteryStyle}>
-              <BatteryBar percentage={percentage} text={`${percentage}%`} />
-            </div>
-            <div style={tachoStyle}>
-              <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
-            </div>
-          </div>
+               <div class="row" style={vertSpacer}></div>
 
-              <div class="row" style={vertSpacer}></div>
-        </div>
-      </div>
+                 <div class="col" style={tachoContainerSyle} >
+                   <div style={batteryStyle}>
+                     <BatteryBar percentage={percentage} text={`${percentage}%`} />
+                   </div>
+                   <div style={tachoStyle}>
+                     <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
+                   </div>
+                 </div>
 
-
-      <div class="px-5">
+                     <div class="row" style={vertSpacer}></div>
+               </div>
+             </div>
 
 
-            <div class="col-sm-3"  style={divStyle}>
-
-               <Header
-                title="NAVI"
-                bsStyle="warning" block style={buttonStyle}
-               />
-            </div>
-
-            <div class="col-sm-3" style={divStyle}>
-               <Button bsStyle="warning" block style={buttonStyle}>MUSIC</Button>
-            </div>
-
-            <div class="col-sm-3" style={divStyle}>
-               <Button bsStyle="warning" block style={buttonStyle}>APPS</Button>
-            </div>
-
-            <div class="col-sm-3" style={divStyle}>
-              <Button bsStyle="warning" block style={buttonStyle}>SETTINGS</Button>
-            </div>
+             <div class="row">
 
 
-        </div>
+                   <div class="col-sm-3"  style={divStyle} style={boxBorderRed}>
 
-        </div>
+                      <Header
+                       title="NAVI"
+                       bsStyle="warning" block style={buttonStyle}
+                      />
+                   </div>
 
-    </div>
+                   <div class="col-sm-3" style={divStyle} style={boxBorderRed}>
+                      <Button bsStyle="warning" block style={buttonStyle}>MUSIC</Button>
+                   </div>
 
-  </div>
+                   <div class="col-sm-3" style={divStyle} style={boxBorderRed}>
+                      <Button bsStyle="warning" block style={buttonStyle}>APPS</Button>
+                   </div>
+
+                   <div class="col-sm-3" style={divStyle} style={boxBorderRed}>
+                     <Button bsStyle="warning" block style={buttonStyle}>SETTINGS</Button>
+                   </div>
+
+
+              </div>
+
+               </div>
+
+           </div>
+
+         </div>
+
 
      );
    }
  }
+*/

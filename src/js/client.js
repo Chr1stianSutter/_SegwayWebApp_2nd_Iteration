@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import {Provider} from "react-redux"
 
-import Layout from "./pages/Button_Layout"
+import Layout from "./pages/Layout_FlexBox"
 import store from "./store"
 
 const app = document.getElementById('app');
