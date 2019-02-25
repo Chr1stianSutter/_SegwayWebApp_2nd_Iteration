@@ -17,7 +17,11 @@ export default class Header extends React.Component {
     }
 }
 */
-class Header extends React.Component {
+
+
+
+
+class NaviButton extends React.Component {
   constructor(props){
       super(props)
       this.state = {"show_menu": false}
@@ -43,14 +47,16 @@ class Header extends React.Component {
         height: '120px',
         fontSize: '24px',
         fontWeight: 'bold',
-        marginBottom:'20px'
+        marginBottom:'20px',
+        zIndex:  '20'
       };
       const menuButtonStyle = {
         height: '120px',
         width: '200px',
         fontSize: '24px',
         fontWeight: 'bold',
-        marginBottom:'20px'
+        marginBottom:'20px',
+        zIndex:  '20'
       };
 
       const divStyle = {
@@ -104,4 +110,4 @@ class Header extends React.Component {
       );
   }
 }
-module.exports = Header;
+module.exports = NaviButton;

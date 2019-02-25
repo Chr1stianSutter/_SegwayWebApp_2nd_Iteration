@@ -1,8 +1,10 @@
 import React from "react"
+
 import NaviButton from "../components/NaviButton"
 import MusicButton from "../components/MusicButton"
 import AppButton from "../components/AppButton"
-import Header from "../components/NaviButton"
+import SettingsButton from "../components/SettingsButton"
+
 import Button from 'react-bootstrap/lib/Button';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -15,6 +17,13 @@ const percentage = 80;
 
 const divStyle = {
  boxSizing: 'border-box',
+ height: '40px',
+ width: '160px',
+ fontSize: '24px',
+ margin:'20px',
+ fontWeight: 'bold',
+ zIndex:  '15',
+ border: '1px solid red'
  //paddingTop: '20px'
 };
 
@@ -26,10 +35,13 @@ const backgroundStyle = {
  height: '550px',
  width:'1040px',
  //border: '2px'
+ position: 'relative',
+
  backgroundColor: 'gray'
 };
 const tachoStyle = {
  position: 'absolute',
+ //float: 'bottom',
   width: '300px',
   height: '300px',
   //width: '100%',
@@ -58,10 +70,11 @@ const gridStyle ={
 };
 const buttonStyle = {
  height: '40px',
- width: '200px',
+ width: '160px',
  fontSize: '24px',
  margin:'20px',
- fontWeight: 'bold'
+ fontWeight: 'bold',
+ zIndex:  '15'
 };
 const verticalGridEmptyLine = {
  height: '20px'
@@ -91,11 +104,10 @@ function RowMenuPositionStyle(props) {
 }
 */
 
-
 export default class  Layout extends React.Component {
   constructor() {
     super();
-    this.state = {top:'420px'};
+    this.state = {top:'50px'};
     }
 
     setTopDistance(newTopDistance) {
@@ -110,9 +122,12 @@ export default class  Layout extends React.Component {
 
         top: this.state.top,
         left:'auto',
+        width: '1040',
         positionAnchor:'0% 100%',
+        //positionAnchor:'100% 0%',
         position:'absolute',
-        zIndex:'1'
+        zIndex:'15',
+        border: '1px solid red'
       }
 
    };
@@ -126,6 +141,26 @@ export default class  Layout extends React.Component {
       </p>
 
         <div class="col-sm-12" style ={staticStyle}>
+
+        <Row top="xs" style={absoluteStyle}>
+
+          <Col class="col-sm-2"style={divStyle}>
+              <NaviButton bsStyle="warning" block style={buttonStyle}>NAVI</NaviButton>
+          </Col>
+
+          <Col class="col-sm-2"style={divStyle}>
+            <MusicButton bsStyle="warning" block style={buttonStyle}>MUSIC</MusicButton>
+          </Col>
+
+          <Col class="col-sm-2"style={divStyle}>
+            <AppButton bsStyle="warning" block style={buttonStyle}>APPS</AppButton>
+          </Col>
+
+          <Col class="col-sm-2"style={divStyle}>
+            <SettingsButton bsStyle="warning" block style={buttonStyle}>SETTINGS</SettingsButton>
+          </Col>
+        </Row>
+
 
           <div class="col-sm-12" style={backgroundStyle}>
             <div class="row" style={vertSpacer}></div>
@@ -148,33 +183,25 @@ export default class  Layout extends React.Component {
           </div>
           </div>
 
+          /*
+          <div class="player">
+              <canvas></canvas>
+              <div class="song">
+                <div class="artist">Kavinsky</div>
+                <div class="name">Odd Look ft. The Weeknd</div>
+              </div>
+              <div class="playarea">
+                <div class="prevSong"></div>
+                <div class="play"></div>
+                <div class="pause"></div>
+                <div class="nextSong"></div>
+              </div>
+              <div class="soundControl"></div>
+              <div class="time">00:00</div>
           </div>
+          */
 
-
-  <Row bottom="xs" style={absoluteStyle}>
-
-    <Col class="col-sm-3"style={divStyle}>
-      <Header
-       title="NAVI"
-       bsStyle="warning" block style={buttonStyle}
-      />
-    </Col>
-
-    <Col class="col-sm-3"style={divStyle}>
-      <Button bsStyle="warning" block style={buttonStyle}>MUSIC</Button>
-    </Col>
-
-    <Col class="col-sm-3"style={divStyle}>
-      <Button bsStyle="warning" block style={buttonStyle}>APPS</Button>
-    </Col>
-
-    <Col class="col-sm-3"style={divStyle}>
-      <Button bsStyle="warning" block style={buttonStyle}>SETTINGS</Button>
-    </Col>
-  </Row>
-
-
-
+          </div>
   </div>
 
     );
