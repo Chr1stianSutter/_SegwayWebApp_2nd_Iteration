@@ -31,7 +31,8 @@ naviButtonState.close_the_menu = function(){
 }
 */
 
-@observer class NaviButton extends React.Component {
+@observer
+export default class NaviButton extends React.Component {
   constructor(props){
       super(props)
       this.state = {"show_menu": false}
@@ -141,5 +142,3 @@ naviButtonState.close_the_menu = function(){
       );
   }
 }
-NaviButton = observer(NaviButton);
-module.exports = NaviButton;
