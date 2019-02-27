@@ -79,24 +79,24 @@ class AppButton extends React.Component {
                 <div >
                   <div class="col-sm-12" style={boxBorderRed}>
                   <div class="row">
-                      <div class="col-sm-3" style={divStyle}>
+                      <div style={divStyle}>
                          <Button onClick={this.close_the_menu} bsStyle="warning" inline style={menuHeaderStyle}>APPS</Button>
                       </div>
                   </div>
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>App 1</Button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>App 2</Button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>App 3</Button>
                         </div>
                     </div>

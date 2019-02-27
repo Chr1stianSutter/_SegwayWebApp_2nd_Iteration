@@ -55,7 +55,7 @@ class MusicButton extends React.Component {
       };
 
       const menuStyle = {
-        height: '360px',
+        height: '400px',
         width: '200px',
         fontSize: '12px',
         fontWeight: 'bold',
@@ -88,13 +88,13 @@ class MusicButton extends React.Component {
                 <div >
                   <div class="col-sm-12" style={boxBorderRed}>
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button onClick={this.close_the_menu} bsStyle="warning" inline style={menuHeaderStyle}>MUSIC</Button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button bsStyle="warning" inline style={menuStyle}></Button>
                         </div>
                     </div>

@@ -13,14 +13,17 @@ import CircularProgressbar from 'react-circular-progressbar';
 import Speedometer from '../components/Speedometer';
 import BatteryBar from '../components/BatteryBar';
 
+import {decorate, observable} from "mobx";
+import {observer} from "mobx-react";
+
 const percentage = 80;
 
 const divStyle = {
  boxSizing: 'border-box',
  height: '40px',
- width: '160px',
+ width: '200px',
  fontSize: '24px',
- margin:'20px',
+ margin:'auto',
  fontWeight: 'bold',
  zIndex:  '15',
  border: '1px solid red'
@@ -70,9 +73,9 @@ const gridStyle ={
 };
 const buttonStyle = {
  height: '40px',
- width: '160px',
+ width: '200px',
  fontSize: '24px',
- margin:'20px',
+ margin:  '20px',
  fontWeight: 'bold',
  zIndex:  '15'
 };
@@ -102,12 +105,16 @@ function RowMenuPositionStyle(props) {
   return
   <Row bottom="xs" {props.style}>;
 }
+
+in render:
+<p style = {textTestMarginLeftStyleREMOVE}>"______________" { `${ this.state.top }%` }</p>
+
 */
 
 export default class  Layout extends React.Component {
   constructor() {
     super();
-    this.state = {top:'50px'};
+    this.state = {top:'40px'};
     }
 
     setTopDistance(newTopDistance) {
@@ -136,27 +143,24 @@ export default class  Layout extends React.Component {
     return(
 
       <div class="row" >
-      <p style = {textTestMarginLeftStyleREMOVE}>
-        "______________" { `${ this.state.top }%` }
-      </p>
 
         <div class="col-sm-12" style ={staticStyle}>
 
         <Row top="xs" style={absoluteStyle}>
 
-          <Col class="col-sm-2"style={divStyle}>
+          <Col style={divStyle}>
               <NaviButton bsStyle="warning" block style={buttonStyle}>NAVI</NaviButton>
           </Col>
 
-          <Col class="col-sm-2"style={divStyle}>
+          <Col style={divStyle}>
             <MusicButton bsStyle="warning" block style={buttonStyle}>MUSIC</MusicButton>
           </Col>
 
-          <Col class="col-sm-2"style={divStyle}>
+          <Col style={divStyle}>
             <AppButton bsStyle="warning" block style={buttonStyle}>APPS</AppButton>
           </Col>
 
-          <Col class="col-sm-2"style={divStyle}>
+          <Col style={divStyle}>
             <SettingsButton bsStyle="warning" block style={buttonStyle}>SETTINGS</SettingsButton>
           </Col>
         </Row>
@@ -164,6 +168,10 @@ export default class  Layout extends React.Component {
 
           <div class="col-sm-12" style={backgroundStyle}>
             <div class="row" style={vertSpacer}></div>
+              <div class="row" style={vertSpacer}></div>
+                <div class="row" style={vertSpacer}></div>
+                  <div class="row" style={vertSpacer}></div>
+                    <div class="row" style={vertSpacer}></div>
           <div class="container" style ={containerStyle} style={boxBorderRed}>
             <div class="row justify-content-center">
 

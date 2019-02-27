@@ -2,6 +2,8 @@ import React from "react";
 import Button from 'react-bootstrap/lib/Button';
 import MenuButton from '../components/MenuButton';
 import Layout_FlexBox from '../pages/Layout_FlexBox';
+import MusicButton from '../components/MusicButton';
+import {observer} from "mobx-react";
 
 /*
 export default class Header extends React.Component {
@@ -19,9 +21,17 @@ export default class Header extends React.Component {
 */
 
 
+/*
+const naviButtonState = observable(NaviButton.state = {"show_menu": false});
+naviButtonState.open_the_menu = function(){
+  this.state = {"show_menu": true};
+}
+naviButtonState.close_the_menu = function(){
+  this.state = {"show_menu": false};
+}
+*/
 
-
-class NaviButton extends React.Component {
+@observer class NaviButton extends React.Component {
   constructor(props){
       super(props)
       this.state = {"show_menu": false}
@@ -30,6 +40,7 @@ class NaviButton extends React.Component {
   }
   open_the_menu(){
       this.setState({"show_menu": true}),
+      MusicButton.setState({"show_menu": false}),
       Layout_FlexBox.setState({"top":'100px'});
   }
   close_the_menu(){
@@ -52,7 +63,7 @@ class NaviButton extends React.Component {
         height: '120px',
         fontSize: '24px',
         fontWeight: 'bold',
-        marginBottom:'20px',
+        //marginBottom:'20px',
         zIndex:  '20'
       };
       const menuButtonStyle = {
@@ -81,7 +92,9 @@ class NaviButton extends React.Component {
 
 
       return (
+
           <div style={style}>
+
               {this.state.show_menu ?
 
                 /*
@@ -96,24 +109,24 @@ class NaviButton extends React.Component {
                 <div >
                   <div class="col-sm-12" style={boxBorderRed}>
                   <div class="row">
-                      <div class="col-sm-3" style={divStyle}>
+                      <div  style={divStyle}>
                          <Button onClick={this.close_the_menu} bsStyle="warning" inline style={menuHeaderStyle}>NAVI</Button>
                       </div>
                   </div>
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>To Adress</Button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>To Home</Button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3" style={divStyle}>
+                        <div  style={divStyle}>
                            <Button bsStyle="warning" inline style={menuButtonStyle}>To Recent</Button>
                         </div>
                     </div>
@@ -128,4 +141,5 @@ class NaviButton extends React.Component {
       );
   }
 }
+NaviButton = observer(NaviButton);
 module.exports = NaviButton;
