@@ -2,25 +2,43 @@ import React from "react";
 import Button from 'react-bootstrap/lib/Button';
 import MenuButton from '../components/MenuButton';
 import Layout_FlexBox from '../pages/Layout_FlexBox';
+import MusicButton from '../components/MusicButton';
+import {observer} from "mobx-react";
 
-class SettingsButton extends React.Component {
+import Store from '../stores/store.js'
+//console.log("imported", Store)
+//const navStore = new Store();
+
+@observer
+export default class NaviButton extends React.Component {
   constructor(props){
       super(props)
       this.state = {"show_menu": false}
-      this.open_the_menu = this.open_the_menu.bind(this);
-      this.close_the_menu = this.close_the_menu.bind(this);
-  }
-  open_the_menu(){
-      this.setState({"show_menu": true}),
-      Layout_FlexBox.setState({"top":'100px'});
   }
 
-  close_the_menu(){
-      this.setState({"show_menu": false}),
-      Layout_FlexBox.setState({"top":'420px'});
+  open_the_menu(){
+      //MobxStore.navState.activeNavElement = "navigation"
+
+      Store.setActiveNavState("settings");
+      //console.log(store)
+      //activeNavElement = "navigation";
+      this.setState({"show_menu": true})
+
+      //MusicButton.setState({"show_menu": false}),
+      //Layout_FlexBox.setState({"top":'100px'});
   }
+  close_the_menu(){
+
+      //Layout_FlexBox.setState({"top":'420px'});
+      Store.setActiveNavState("");
+      //MobxStore.navState.activeNavElement = null;
+      //activeNavElement = null;
+      this.setState({"show_menu": false});
+  }
+
   render(){
-      console.log(this.state)
+    //const x = this.props.Store.setActiveNavState === "navigation" ? "navigation" : "";
+      //console.log(this.state)
       const style = {
           height: '40px',
           fontSize: '24px',
@@ -30,16 +48,15 @@ class SettingsButton extends React.Component {
 
         border: '1px solid red'
       };
-
       const buttonStyle = {
-        height: '10px',
+        height: '120px',
         fontSize: '24px',
         fontWeight: 'bold',
-        marginBottom:'20px',
+        //marginBottom:'20px',
         zIndex:  '20'
       };
       const menuButtonStyle = {
-        height: '40px',
+        height: '120px',
         width: '200px',
         fontSize: '24px',
         fontWeight: 'bold',
@@ -54,7 +71,6 @@ class SettingsButton extends React.Component {
         marginBottom:'20px',
         zIndex:  '20'
       };
-
       const menuStyle = {
         height: '400px',
         width: '200px',
@@ -65,17 +81,20 @@ class SettingsButton extends React.Component {
       };
 
       const divStyle = {
-       boxSizing: 'border-box',
-       zIndex:  '20'
+       boxSizing: 'border-box'
        //paddingTop: '20px'
      };
 
 
-
+    //const {navState} = Store;
+    const {activeNavElement} = Store;
+    //console.log(Store);
 
       return (
+
           <div style={style}>
-              {this.state.show_menu ?
+              {console.log(Store.activeNavElement)}
+              {("settings" == Store.activeNavElement) ?
 
                 /*
                   <p>
@@ -105,9 +124,9 @@ class SettingsButton extends React.Component {
 
                   :
                   <Button onClick={this.open_the_menu} bsStyle="warning" block style={style} > SETTINGS </Button>
+
               }
           </div>
       );
   }
 }
-module.exports = SettingsButton;

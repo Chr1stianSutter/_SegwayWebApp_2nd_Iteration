@@ -5,51 +5,40 @@ import Layout_FlexBox from '../pages/Layout_FlexBox';
 import MusicButton from '../components/MusicButton';
 import {observer} from "mobx-react";
 
-/*
-export default class Header extends React.Component {
-
-
-    render() {
-
-        return (
-            <div>
-                <Button bsStyle="warning" block> NAVI </Button>
-            </div>
-        );
-    }
-}
-*/
-
-
-/*
-const naviButtonState = observable(NaviButton.state = {"show_menu": false});
-naviButtonState.open_the_menu = function(){
-  this.state = {"show_menu": true};
-}
-naviButtonState.close_the_menu = function(){
-  this.state = {"show_menu": false};
-}
-*/
+import Store from '../stores/store.js'
+//console.log("imported", Store)
+//const navStore = new Store();
 
 @observer
 export default class NaviButton extends React.Component {
   constructor(props){
       super(props)
       this.state = {"show_menu": false}
-      this.open_the_menu = this.open_the_menu.bind(this);
-      this.close_the_menu = this.close_the_menu.bind(this);
   }
+
   open_the_menu(){
-      this.setState({"show_menu": true}),
-      MusicButton.setState({"show_menu": false}),
-      Layout_FlexBox.setState({"top":'100px'});
+      //MobxStore.navState.activeNavElement = "navigation"
+
+      Store.setActiveNavState("navigation");
+      //console.log(store)
+      //activeNavElement = "navigation";
+      this.setState({"show_menu": true})
+
+      //MusicButton.setState({"show_menu": false}),
+      //Layout_FlexBox.setState({"top":'100px'});
   }
   close_the_menu(){
-      this.setState({"show_menu": false}),
-      Layout_FlexBox.setState({"top":'420px'});
+
+      //Layout_FlexBox.setState({"top":'420px'});
+      Store.setActiveNavState("");
+      //MobxStore.navState.activeNavElement = null;
+      //activeNavElement = null;
+      this.setState({"show_menu": false});
   }
+
   render(){
-      console.log(this.state)
+    //const x = this.props.Store.setActiveNavState === "navigation" ? "navigation" : "";
+      //console.log(this.state)
       const style = {
           height: '40px',
           fontSize: '24px',
@@ -59,7 +48,6 @@ export default class NaviButton extends React.Component {
 
         border: '1px solid red'
       };
-
       const buttonStyle = {
         height: '120px',
         fontSize: '24px',
@@ -83,20 +71,21 @@ export default class NaviButton extends React.Component {
         marginBottom:'20px',
         zIndex:  '20'
       };
-
       const divStyle = {
        boxSizing: 'border-box'
        //paddingTop: '20px'
      };
 
 
-
+    //const {navState} = Store;
+    const {activeNavElement} = Store;
+    //console.log(Store);
 
       return (
 
           <div style={style}>
-
-              {this.state.show_menu ?
+              {console.log(Store.activeNavElement)}
+              {("navigation" == Store.activeNavElement) ?
 
                 /*
                   <p>
@@ -111,7 +100,7 @@ export default class NaviButton extends React.Component {
                   <div class="col-sm-12" style={boxBorderRed}>
                   <div class="row">
                       <div  style={divStyle}>
-                         <Button onClick={this.close_the_menu} bsStyle="warning" inline style={menuHeaderStyle}>NAVI</Button>
+                         <Button onClick={this.close_the_menu.bind(this)} bsStyle="warning" inline style={menuHeaderStyle}>NAVI</Button>
                       </div>
                   </div>
                     <div class="row">
@@ -136,7 +125,7 @@ export default class NaviButton extends React.Component {
 
 
                   :
-                  <Button onClick={this.open_the_menu} bsStyle="warning" block style={style} > NAVI </Button>
+                  <Button onClick={this.open_the_menu.bind(this)} bsStyle="warning" block style={style} > NAVI </Button>
               }
           </div>
       );

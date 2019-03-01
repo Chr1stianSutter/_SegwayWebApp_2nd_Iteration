@@ -13,8 +13,7 @@ import CircularProgressbar from 'react-circular-progressbar';
 import Speedometer from '../components/Speedometer';
 import BatteryBar from '../components/BatteryBar';
 
-import {decorate, observable} from "mobx";
-import {observer} from "mobx-react";
+
 
 const percentage = 80;
 
@@ -110,7 +109,6 @@ in render:
 <p style = {textTestMarginLeftStyleREMOVE}>"______________" { `${ this.state.top }%` }</p>
 
 */
-
 export default class  Layout extends React.Component {
   constructor() {
     super();
@@ -123,6 +121,8 @@ export default class  Layout extends React.Component {
   }
 
   render(){
+
+
     const styles = {
       absoluteStyle: {
         //top:'420',
@@ -136,7 +136,7 @@ export default class  Layout extends React.Component {
         zIndex:'15',
         border: '1px solid red'
       }
-
+    //const {navState} = MobxStore;
    };
    const { absoluteStyle } = styles;
 
