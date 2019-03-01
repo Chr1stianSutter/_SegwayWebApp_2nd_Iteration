@@ -2,7 +2,7 @@ import React from "react";
 import Button from 'react-bootstrap/lib/Button';
 import MenuButton from '../components/MenuButton';
 import Layout_FlexBox from '../pages/Layout_FlexBox';
-import MusicButton from '../components/MusicButton';
+//import MusicButton from '../components/MusicButton';
 import {observer} from "mobx-react";
 
 import Store from '../stores/store.js'

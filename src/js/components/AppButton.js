@@ -2,24 +2,43 @@ import React from "react";
 import Button from 'react-bootstrap/lib/Button';
 import MenuButton from '../components/MenuButton';
 import Layout_FlexBox from '../pages/Layout_FlexBox';
+//import MusicButton from '../components/MusicButton';
+import {observer} from "mobx-react";
 
-class AppButton extends React.Component {
+import Store from '../stores/store.js'
+//console.log("imported", Store)
+//const navStore = new Store();
+
+@observer
+export default class AppsButton extends React.Component {
   constructor(props){
       super(props)
       this.state = {"show_menu": false}
-      this.open_the_menu = this.open_the_menu.bind(this);
-      this.close_the_menu = this.close_the_menu.bind(this);
   }
+
   open_the_menu(){
-      this.setState({"show_menu": true}),
-      Layout_FlexBox.setState({"top":'100px'});
+      //MobxStore.navState.activeNavElement = "navigation"
+
+      Store.setActiveNavState("apps");
+      //console.log(store)
+      //activeNavElement = "navigation";
+      this.setState({"show_menu": true})
+
+      //MusicButton.setState({"show_menu": false}),
+      //Layout_FlexBox.setState({"top":'100px'});
   }
   close_the_menu(){
-      this.setState({"show_menu": false}),
-      Layout_FlexBox.setState({"top":'420px'});
+
+      //Layout_FlexBox.setState({"top":'420px'});
+      Store.setActiveNavState("");
+      //MobxStore.navState.activeNavElement = null;
+      //activeNavElement = null;
+      this.setState({"show_menu": false});
   }
+
   render(){
-      console.log(this.state)
+    //const x = this.props.Store.setActiveNavState === "navigation" ? "navigation" : "";
+      //console.log(this.state)
       const style = {
           height: '40px',
           fontSize: '24px',
@@ -29,12 +48,11 @@ class AppButton extends React.Component {
 
         border: '1px solid red'
       };
-
       const buttonStyle = {
         height: '120px',
         fontSize: '24px',
         fontWeight: 'bold',
-        marginBottom:'20px',
+        //marginBottom:'20px',
         zIndex:  '20'
       };
       const menuButtonStyle = {
@@ -53,19 +71,21 @@ class AppButton extends React.Component {
         marginBottom:'20px',
         zIndex:  '20'
       };
-
       const divStyle = {
-       boxSizing: 'border-box',
-       zIndex:  '20'
+       boxSizing: 'border-box'
        //paddingTop: '20px'
      };
 
 
-
+    //const {navState} = Store;
+    const {activeNavElement} = Store;
+    //console.log(Store);
 
       return (
+
           <div style={style}>
-              {this.state.show_menu ?
+              {console.log(Store.activeNavElement)}
+              {("apps" == Store.activeNavElement) ?
 
                 /*
                   <p>
@@ -79,25 +99,25 @@ class AppButton extends React.Component {
                 <div >
                   <div class="col-sm-12" style={boxBorderRed}>
                   <div class="row">
-                      <div style={divStyle}>
-                         <Button onClick={this.close_the_menu} bsStyle="warning" inline style={menuHeaderStyle}>APPS</Button>
+                      <div  style={divStyle}>
+                         <Button onClick={this.close_the_menu.bind(this)} bsStyle="warning" inline style={menuHeaderStyle}>APPS</Button>
                       </div>
                   </div>
                     <div class="row">
                         <div style={divStyle}>
-                           <Button bsStyle="warning" inline style={menuButtonStyle}>App 1</Button>
+                           <Button bsStyle="warning" inline style={menuButtonStyle}>To Adress</Button>
                         </div>
                     </div>
 
                     <div class="row">
                         <div style={divStyle}>
-                           <Button bsStyle="warning" inline style={menuButtonStyle}>App 2</Button>
+                           <Button bsStyle="warning" inline style={menuButtonStyle}>To Home</Button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div style={divStyle}>
-                           <Button bsStyle="warning" inline style={menuButtonStyle}>App 3</Button>
+                        <div  style={divStyle}>
+                           <Button bsStyle="warning" inline style={menuButtonStyle}>To Recent</Button>
                         </div>
                     </div>
                   </div>
@@ -105,10 +125,9 @@ class AppButton extends React.Component {
 
 
                   :
-                  <Button onClick={this.open_the_menu} bsStyle="warning" block style={style} > APPS </Button>
+                  <Button onClick={this.open_the_menu.bind(this)} bsStyle="warning" block style={style} > APPS </Button>
               }
           </div>
       );
   }
 }
-module.exports = AppButton;
