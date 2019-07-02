@@ -30,8 +30,8 @@ const tachoStyle = {
    //height: '100%',
    //backgroundColor: 'yellow',
    margin: 'auto',
-   top:'40',
-   left:'40',
+   top:'40px',
+   left:'40px',
    zIndex:  '10'
 }
 const batteryStyle = {
