@@ -97,9 +97,10 @@ body {
 }
 
 .buttonStyle {
+  position: absolute;
   height: 80px;
   width: 200px;
-
+  z-index:  13;
 
   //font-size: 24px;
   //font-weight: bold;
@@ -107,10 +108,12 @@ body {
 
 .divStyle {
   //border: 8px solid red;
+  position: absolute;
   height: 80px;
   margin-top: 680px;
   width: 200px;
   margin-left: 550px;
+   z-index:  13;
 }
 
 .red {
