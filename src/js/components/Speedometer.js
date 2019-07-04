@@ -41,11 +41,28 @@ function LayeredProgressbar(props) {
   );
 }
 
+function LayeredProgressbarBackground(props) {
+  const { renderOverlays, ...otherProps } = props;
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+      }}
+    >
+      <div style={{ position: 'absolute' }}>
+        <CircularProgressbar {...otherProps} textForPercentage={null} />
+      </div>
+    </div>
+  );
+}
+
 function RadialSeparator(props) {
   return (
     <div
       style={{
-        background: 'gray',
+        backgroundColor: "#070c05",
         width: '10px',
         height: '650px',
         transform: `rotate(${props.degrees}deg)`,
@@ -67,6 +84,7 @@ function getRadialSeparators(numSeparators) {
 
 function Speedometer(props) {
   return (
+
     <LayeredProgressbar
       percentage={props.percentage}
       styles={{
@@ -79,13 +97,16 @@ function Speedometer(props) {
         },
         trail: {
           // Tweak the trail color:
-          stroke: 'gray',
+          stroke: "#242424",
         },
       }}
       renderOverlays={() =>
         getRadialSeparators(20).concat(
           <div style={{ fontSize: 80, color: 'orange' }}>
-            {props.percentage}%
+            {props.percentage}
+          </div>,
+          <div style={{ fontSize: 40, color: 'orange', marginTop: '120px' }}>
+            km/h
           </div>,
         )
       }

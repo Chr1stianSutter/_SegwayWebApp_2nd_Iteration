@@ -91,10 +91,10 @@ const vertSpacer ={
 
           <div class="col" style={tachoContainerSyle}>
             <div style={batteryStyle}>
-              <BatteryBar percentage={percentage} text={`${percentage}%`} />
+              <BatteryBar percentage={percentage} text={percentage + "%"} />
             </div>
             <div style={tachoStyle}>
-              <Speedometer percentage={percentage} text={`${percentage}%`}></Speedometer>
+              <Speedometer percentage={percentage} text={percentage + "%"}></Speedometer>
             </div>
           </div>
 

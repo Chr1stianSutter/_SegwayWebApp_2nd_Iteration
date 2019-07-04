@@ -23,7 +23,7 @@ function BatteryBar(props) {
           transform: 'rotate(215deg)',
           transformOrigin: 'center center',
           // Tweak path color:
-          //stroke: '#f88',
+          stroke: '#f88',
           // Tweak path to use flat or rounded ends:
           strokeLinecap: 'butt',
           // Tweak transition animation:
@@ -32,7 +32,7 @@ function BatteryBar(props) {
         // Customize the circle behind the path
         trail: {
           // Tweak the trail color:
-          stroke: 'gray',
+          stroke: "#070c05",
         },
         // Customize the text
 
@@ -43,6 +43,7 @@ function BatteryBar(props) {
           fontSize: '30px',
         },
       }}
+
     />
   );
 }
