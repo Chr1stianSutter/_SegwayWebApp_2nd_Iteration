@@ -7,6 +7,9 @@
 
 body {
   overflow: hidden;
+  width: 1280px;
+  height: 800px;
+  background-color: #070c05;
 }
 
 .tachoContainerSyle{
@@ -25,14 +28,14 @@ body {
    //backgroundColor: yellow;
    margin: auto;
    top: 40px;
-   left: -2px;
+   left: 48px;
    z-index:  10;
 }
 
 .visualizerStyle {
   position: absolute;
-  margin-left: 48px;
-  margin-top: -220px;
+  margin-left: 40px;
+  margin-top: -217px;
    //width: 300px;
    //height: 300px;
    //width: 100%;
@@ -41,7 +44,7 @@ body {
    //margin: auto;
    //top: 40px;
    //left: 40px;
-   z-index:  10;
+   z-index:  11;
 }
 
 .batteryStyle{
@@ -53,20 +56,21 @@ body {
    //backgroundColor: yellow;
    margin: auto;
    top: 0px;
-   left: -42px;
+   left: 8px;
    z-index:  10;
 }
 
 .containerStyle {
   //background-color: blue;
+  width: 100%;
 }
 
 .backgroundStyle {
-  height: 847px;
+  //height: 860px;
   //width: 100%px;
   //border: '2px'
 
-  background-color: #070c05;
+//  background-color: #070c05;
 }
 
 .verticalCentered {
@@ -84,10 +88,31 @@ body {
  margin: auto;
  position: absolute;
  top: 0; left: 0; bottom: 0; right: 0;
- border: solid black;
+ //border: solid black;
 }
 
 .centerContainer {
   position: relative;
   height: 100%;
+}
+
+.buttonStyle {
+  height: 80px;
+  width: 200px;
+
+
+  //font-size: 24px;
+  //font-weight: bold;
+}
+
+.divStyle {
+  //border: 8px solid red;
+  height: 80px;
+  margin-top: 680px;
+  width: 200px;
+  margin-left: 550px;
+}
+
+.red {
+  border: 8px solid red;
 }

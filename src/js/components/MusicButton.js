@@ -1,14 +1,16 @@
 import React from "react";
 import Button from 'react-bootstrap/lib/Button';
 
-export default class Header extends React.Component {
+export default class MusicButton extends React.Component {
 
 
     render() {
 
         return (
             <div>
-                <Button bsStyle="warning" block> MUSIC </Button>
+                <Button block>
+                  <i class="glyphicon glyphicon-music"></i>
+                </Button>
             </div>
         );
     }
