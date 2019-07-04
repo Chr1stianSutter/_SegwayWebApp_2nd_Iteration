@@ -26,7 +26,7 @@ export default class TachoLayout extends React.Component {
         <Equalizer size="1200px" />
       </div>
       </Grid>
-        <div className="verticalCentered">
+        <div >
 
           <Grid verticalAlign='middle' columns={1} centered>
 
@@ -34,13 +34,13 @@ export default class TachoLayout extends React.Component {
 
               <div class="container" className="containerStyle">
 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center verticalCentered">
 
                   <div className="tachoContainerSyle">
                     <div className="tachoStyle">
                       <Speedometer percentage={percentage} text={percentage + "km/h"}></Speedometer>
                     </div>
-                    <div className="batterySyle">
+                    <div className="batteryStyle">
                       <NewBatteryBar percentage={percentageBattery} />
                     </div>
 

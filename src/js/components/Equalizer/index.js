@@ -65,7 +65,8 @@ export default class Equalizer extends React.Component {
     const equalizerSize = {
       width: this.props.size,
       height: this.props.size,
-      
+
+
     }
     return(
       <div style={equalizerSize} ref={this.ReferenceToContainerDiv} className="__Equalizer">{"Will render circular graph"}</div>
