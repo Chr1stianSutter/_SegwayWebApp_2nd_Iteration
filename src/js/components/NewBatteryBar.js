@@ -107,7 +107,7 @@ function NewBatteryBar(props) {
 
       renderOverlays={() =>
         getRadialSeparators().concat(
-        <div style={{ fontSize: 50,  color: '#3e98c7', marginTop: '278px', zIndex:'10', backgroundColor:'#070c05', paddingLeft:'38px', paddingRight:'38px', paddingBottom:'0px', paddingTop:'35px', marginBottom:'0px'}}>
+        <div style={{ fontSize: 50,  color: '#3e98c7', marginTop: '278px', zIndex:'10', backgroundColor:'#070c05', paddingLeft:'38px', paddingRight:'38px', paddingBottom:'0px', paddingTop:'15px', marginBottom:'0px'}}>
           {props.percentage}%
         </div>,
         <div style={{ fontSize: 30, color: '#3e98c7', marginTop: '370px', backgroundColor:'#070c05' }}>
