@@ -1,0 +1,13 @@
+/*
+  Coverflow Styling SCSS
+*/
+
+.coverflowContainer {
+  position: absolute;
+  height: 200px;
+  width: 960px;
+  bottom: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index:  14;
+}

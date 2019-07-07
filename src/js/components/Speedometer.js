@@ -86,7 +86,7 @@ function Speedometer(props) {
   return (
 
     <LayeredProgressbar
-      percentage={props.percentage}
+      percentage={props.speed * 5 * 0.8}
       styles={{
         path: {
           strokeLinecap: 'butt',
@@ -102,10 +102,10 @@ function Speedometer(props) {
       }}
       renderOverlays={() =>
         getRadialSeparators(20).concat(
-          <div style={{ fontSize: 80, color: 'orange' }}>
-            {props.percentage}
+          <div style={{ fontSize: 80, color: 'orange', marginTop: '-15px' }}>
+            {props.speed}
           </div>,
-          <div style={{ fontSize: 40, color: 'orange', marginTop: '120px' }}>
+          <div style={{ fontSize: 20, color: 'orange', marginTop: '80px' }}>
             km/h
           </div>,
         )

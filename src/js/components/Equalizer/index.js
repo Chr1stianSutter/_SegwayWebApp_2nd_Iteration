@@ -33,6 +33,7 @@ require('./style.scss')
 //var myEcharts = echarts.init(document.getElementById('main'));
 //var myEcharts = require('echarts')
 
+//@observer
 export default class Equalizer extends React.Component {
   constructor(props){
     super(props)

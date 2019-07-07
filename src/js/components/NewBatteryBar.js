@@ -68,7 +68,7 @@ function getRadialSeparators(numSeparators) {
 function NewBatteryBar(props) {
   return (
     <LayeredProgressbar
-    percentage={props.percentage}
+    percentage={props.percentage * 0.8}
     //text={props.text}
     // Path width must be customized with strokeWidth,
     // since it informs dimension calculations.
@@ -107,10 +107,22 @@ function NewBatteryBar(props) {
 
       renderOverlays={() =>
         getRadialSeparators().concat(
-        <div style={{ fontSize: 50,  color: '#3e98c7', marginTop: '278px', zIndex:'10', backgroundColor:'#070c05', paddingLeft:'38px', paddingRight:'38px', paddingBottom:'0px', paddingTop:'15px', marginBottom:'0px'}}>
-          {props.percentage}%
+        <div style={{
+          fontSize: 50,
+          color: '#3e98c7',
+          marginTop: '275px',
+          zIndex:'10',
+          backgroundColor:'#070c05',
+          width:'184px',
+          height:'95px',
+          borderBottomRightRadius: '50% 30px',
+          borderBottomLeftRadius: '50% 30px'
+        }}>
+          <div style={{transform: 'translateY(35px)', textAlign: "center"}} >
+            {props.percentage}%
+          </div>
         </div>,
-        <div style={{ fontSize: 30, color: '#3e98c7', marginTop: '370px', backgroundColor:'#070c05' }}>
+        <div style={{ fontSize: 30, color: '#3e98c7', marginTop: '370px'}}>
 
         </div>
       )
