@@ -1,9 +1,6 @@
 /*
   Speedometer Page Styling SCSS
 */
-#__Speedometer {
-
-}
 $topDist: 37%;
 body {
   overflow: hidden;
@@ -57,4 +54,29 @@ body {
 
 .red {
   border: 8px solid red;
+}
+
+
+.AudioControlButtonBarContainer{
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  justify-content: center;
+  width: 180px;
+
+  //text-align: center;
+  //display: inline;
+  position: absolute;
+  //height: 250x;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index:  14;
+  background: transparent;
+
+  p{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+  }
 }

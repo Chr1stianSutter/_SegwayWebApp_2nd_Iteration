@@ -14,6 +14,11 @@
   background: transparent;
 }
 
+button {
+  padding: 20px;
+}
+
+
 
 .material-icons {
   font-family: 'Material Icons';
@@ -41,8 +46,4 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 
-}
-
-.red {
-  border: 8px solid red;
 }
