@@ -65,7 +65,14 @@ export default class TachoLayout extends React.Component {
             </Button>
         </div>
 
-
+        <div className="OpenCoverflowButton">
+            <Button
+              onClick={() => {}}
+              className="material-icons"
+              >
+                album
+            </Button>
+        </div>
       </div>
     );
   }

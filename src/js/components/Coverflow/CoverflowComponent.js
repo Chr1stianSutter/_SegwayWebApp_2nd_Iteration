@@ -13,7 +13,7 @@ export default class CoverflowComponent extends React.Component {
   render(){
     return(
       <div className="coverflowContainer">
-        <Coverflow width="960" height="600"
+        <Coverflow width="960" height="460"
           displayQuantityOfSide={2}
           navigation={false}
           enableScroll={false}

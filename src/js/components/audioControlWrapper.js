@@ -7,7 +7,7 @@ export default class audioControlWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        coverflow: true
+        coverflow: false
     };
   }
 

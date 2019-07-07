@@ -1,7 +1,7 @@
 /*
   Speedometer Page Styling SCSS
 */
-$topDist: 37%;
+$topDist: 31%;
 body {
   overflow: hidden;
   width: 1280px;
@@ -80,3 +80,23 @@ body {
     text-align: center;
   }
 }
+
+  .OpenCoverflowButton{
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-content: center;
+    width: 180px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index:  14;
+    background: transparent;
+
+    p{
+      color: white;
+      font-size: 50px;
+      text-align: center;
+    }
+  }

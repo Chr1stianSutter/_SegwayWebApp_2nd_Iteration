@@ -98,7 +98,7 @@ class Header extends React.Component {
                 </div>
 
                   :
-                  <Button onClick={this.open_the_menu} bsStyle="warning" block style={style } > NAVI </Button>
+                  <Button onClick={this.open_the_menu} bsStyle="warning" block style={style} > NAVI </Button>
               }
           </div>
       );
