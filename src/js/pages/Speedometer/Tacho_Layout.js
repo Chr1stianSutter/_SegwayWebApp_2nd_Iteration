@@ -9,6 +9,7 @@ import Equalizer from '../../components/Equalizer';
 
 //import MusicButton from "../../components/MusicButton";
 import AudioControlWrapper from "../../components/AudioControlWrapper";
+
 //import AudioControlButtonBar from "../../components/Control";
 import ReactDOM from 'react-dom';
 
@@ -44,12 +45,6 @@ export default class TachoLayout extends React.Component {
           <NewBatteryBar percentage={percentageBattery} />
         </div>
 
-        <div>
-          {/*<MusicButton className="buttonStyle" onCLick={this.toggleButtonMenu}/>*/}
-            <AudioControlWrapper />
-        </div>
-
-
         <div className="AudioControlButtonBarContainer">
             <Button
               onClick={() => this.setState({volumeLevel: (this.state.volumeLevel < 90) ? this.state.volumeLevel + 10  : 100 })}
@@ -72,6 +67,11 @@ export default class TachoLayout extends React.Component {
               >
                 album
             </Button>
+        </div>
+
+        <div>
+          {/*<MusicButton className="buttonStyle" onCLick={this.toggleButtonMenu}/>*/}
+            <AudioControlWrapper />
         </div>
       </div>
     );
