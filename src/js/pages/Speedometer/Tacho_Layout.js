@@ -1,35 +1,38 @@
-import React from "react";
-
-import CircularProgressbar from 'react-circular-progressbar';
-import Speedometer from '../../components/Speedometer';
-//import BatteryBar from '../../components/BatteryBar';
-import NewBatteryBar from '../../components/NewBatteryBar';
-
-import Equalizer from '../../components/Equalizer';
-
-//import MusicButton from "../../components/MusicButton";
-import AudioControlWrapper from "../../components/AudioControlWrapper";
-
-//import AudioControlButtonBar from "../../components/Control";
-import ReactDOM from 'react-dom';
-
+import React from "react"
+import CircularProgressbar from 'react-circular-progressbar'
+import Speedometer from '../../components/Speedometer'
+import NewBatteryBar from '../../components/NewBatteryBar'
+import Equalizer from '../../components/Equalizer'
+import AudioControlWrapper from "../../components/audioControlWrapper.js"
+import ReactDOM from 'react-dom'
 import { Slider, Direction, Button, PlayerIcon, } from 'react-player-controls'
+import AudioController from '../../AudioController.js'
+
+//Styles
+import "./style.scss"
+
 
 const speed = 17;
 const percentageBattery = 100;
 
-import "./style.scss"
-
 export default class TachoLayout extends React.Component {
   constructor(props) {
-    super(props);
-
+    super(props)
+    this.AudioController = new AudioController()
     this.state = ({
-      open: false,
-      volumeLevel: 100
-    });
+      volumeLevel: 100,
+      menuChange: false
+    })
+
   }
+
+  // showCoverflow(){
+  //   console.log(AudioPlayerStore.coverflow);
+  //   AudioPlayerStore.coverflow = true
+  // }
+
   render() {
+    //const ref = new AudioPlayerStore;
 
     return (
       <div>
@@ -62,7 +65,7 @@ export default class TachoLayout extends React.Component {
 
         <div className="OpenCoverflowButton">
             <Button
-              onClick={() => {}}
+              onClick={(e) => this.AudioController.songPickerToggle(e)}
               className="material-icons"
               >
                 album
@@ -71,7 +74,7 @@ export default class TachoLayout extends React.Component {
 
         <div>
           {/*<MusicButton className="buttonStyle" onCLick={this.toggleButtonMenu}/>*/}
-            <AudioControlWrapper />
+            <AudioControlWrapper controller={this.AudioController} />
         </div>
       </div>
     );

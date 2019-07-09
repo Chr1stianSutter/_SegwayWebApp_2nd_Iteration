@@ -3,20 +3,14 @@ import Button from 'react-bootstrap/lib/Button';
 import ReactDOM from 'react-dom';
 import Coverflow from 'react-coverflow';
 import CoverflowComp from './CoverflowComponent';
-//import Layout_FlexBox from '../pages/Layout_FlexBox';
-import {observer} from 'mobx-react';
-//import Store from '../stores/store.js'
 
-@observer
 export default class MusicButton extends React.Component {
   constructor(props){
     super(props)
     //this.setState=this.setState.bind(this)
     this.state = {open : false}
   }
-
-
-
+  
   openMenu(){
     //Store.setActive("open");
     this.setState({
