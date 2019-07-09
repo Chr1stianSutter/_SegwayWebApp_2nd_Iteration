@@ -37,7 +37,7 @@ require('./style.scss')
 export default class Equalizer extends React.Component {
   constructor(props){
     super(props)
-
+    this.state = {isPlaying: this.props.controller.getIsPlaying()}
     this.wave = null;
     //this.ReferenceToContainerDiv = this.ReferenceToContainerDiv.bind(this);
     this.ReferenceToContainerDiv = React.createRef();
@@ -48,7 +48,8 @@ export default class Equalizer extends React.Component {
     if(container) {
       this.wave = new CircularAudioWave(container)
       this.wave.loadAudio('/circular-audio-wave-master/demo/audio/audio1.mp3').then(() => {
-        this.wave.play()
+        
+        this.props.controller.setEqualizer(this.wave)
       })
     }
   }

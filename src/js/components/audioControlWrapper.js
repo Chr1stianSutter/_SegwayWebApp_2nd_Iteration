@@ -19,6 +19,6 @@ export default class audioControlWrapper extends React.Component {
   }
 
   render() {
-    return((this.state.coverflow) ? <CoverflowComponent /> : <AudioControlBar />)
+    return((this.state.coverflow) ? <CoverflowComponent /> : <AudioControlBar controller={this.props.controller} />)
   }
 }

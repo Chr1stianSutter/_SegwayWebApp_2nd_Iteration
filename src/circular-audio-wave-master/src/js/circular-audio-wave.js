@@ -288,8 +288,18 @@ class CircularAudioWave {
     }
     // TODO
     pause() {
-
+      this.sourceNode.stop().then(() => {
+        this.playing = false
+      })
     }
+
+    setVolume(level){
+      if(level < 0) level = 0
+      if(level > 1) level = 1
+      this.sourceNode.gain.value = level
+    }
+
+
     destroy() {
         this.chart.dispose();
     }

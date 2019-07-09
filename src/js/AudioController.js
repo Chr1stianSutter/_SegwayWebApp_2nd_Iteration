@@ -2,6 +2,8 @@ export default class AudioController {
   constructor(){
     this.volume = 1
     this.songProgress = 0
+    this.isPlaying = false
+    this.Equalizer = null
     this.currentSongData = {
       title: "string",
       artist: "string"
@@ -44,6 +46,15 @@ export default class AudioController {
     }
   }
 
+  play(){
+
+  }
+
+  setEqualizer(ref){
+    this.Equalizer = ref
+  }
+
+
   songPickerToggle() {
     console.error('song picker toggle undefined')
     return false
@@ -58,6 +69,20 @@ export default class AudioController {
     return false
   }
 
+  getIsPlaying(){
+    return this.isPlaying
+  }
+
+  setIsPlaying(value){
+    this.isPlaying = value
+    if(this.Equalizer && this.isPlaying){
+      this.Equalizer.play()
+    }else{
+      //console.error("No Equalizer Object registered");
+      this.Equalizer.pause()
+    }
+  }
+
   setSongsSetter(ref){
     this.setPlayback = ref
   }
@@ -66,35 +91,32 @@ export default class AudioController {
     if(level > 1) level = 1
     if(level < 0) level = 0
     this.volume = level
-    //call wave audio and update volume
-    /*
-    if(this.wave){
-    change
-  }
-    */
+    if(this.Equalizer){
+      this.Equalizer.setVolume(level)
+    }
   }
 
   getVolume(){
     return this.volume
   }
 
-  changeSongProgress(){
+  setSongProgress(){
     console.error('songProgress setter undefined')
     return false
   }
-  setChangeSongProgress(ref){
-    this.changeSongProgress = ref
+  setSetSongProgress(ref){
+    this.setSongProgress = ref
   }
   getSongProgress(){
     return this.songProgress
   }
 
-  changeActiveSong(){
+  changeCurrentSong(){
     console.error('changeActiveSong setter undefined')
     return false
   }
   setChangeCurrentSong(ref){
-    this.changeActiveSong = ref
+    this.changeCurrentSong = ref
   }
   getCurrentSongData(){
     return this.currentSongData
