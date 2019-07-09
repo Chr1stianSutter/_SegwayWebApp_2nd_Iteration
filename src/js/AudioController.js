@@ -62,14 +62,18 @@ export default class AudioController {
     this.setPlayback = ref
   }
 
-  changeVolume(){
-    console.error('volume setter undefined')
-    return false
+  setVolume(level){
+    if(level > 1) level = 1
+    if(level < 0) level = 0
+    this.volume = level
+    //call wave audio and update volume
+    /*
+    if(this.wave){
+    change
+  }
+    */
   }
 
-  setChangeVolume(ref){
-    this.changeVolume = ref
-  }
   getVolume(){
     return this.volume
   }

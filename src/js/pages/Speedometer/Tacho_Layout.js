@@ -3,7 +3,8 @@ import CircularProgressbar from 'react-circular-progressbar'
 import Speedometer from '../../components/Speedometer'
 import NewBatteryBar from '../../components/NewBatteryBar'
 import Equalizer from '../../components/Equalizer'
-import AudioControlWrapper from "../../components/audioControlWrapper.js"
+import AudioControlWrapper from "../../components/audioControlWrapper"
+import VolumeButtons from "../../components/VolumeButtons"
 import ReactDOM from 'react-dom'
 import { Slider, Direction, Button, PlayerIcon, } from 'react-player-controls'
 import AudioController from '../../AudioController.js'
@@ -49,18 +50,7 @@ export default class TachoLayout extends React.Component {
         </div>
 
         <div className="AudioControlButtonBarContainer">
-            <Button
-              onClick={() => this.setState({volumeLevel: (this.state.volumeLevel < 90) ? this.state.volumeLevel + 10  : 100 })}
-              className="material-icons"
-              >
-                volume_up
-            </Button>
-              <p>
-                {this.state.volumeLevel +"%"}
-              </p>
-            <Button onClick={() => this.setState({volumeLevel: (this.state.volumeLevel > 10) ? this.state.volumeLevel - 10  : 0 })} className="material-icons">
-                volume_down
-            </Button>
+            <VolumeButtons controller={this.AudioController} />
         </div>
 
         <div className="OpenCoverflowButton">
