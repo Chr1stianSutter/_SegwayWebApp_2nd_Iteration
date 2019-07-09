@@ -2,10 +2,51 @@
 //found on "https://codesandbox.io/s/vymm4oln6y" under "SegmentedProgressbar.js"
 
 import React from "react";
-import { render } from 'react-dom';
 import _ from 'lodash';
 import CircularProgressbar from 'react-circular-progressbar';
 
+export default class Speedometer extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {speed: this.props.controller.getSpeed()}
+    this.props.controller.setUpdateSpeedometer(this.speedDidChange.bind(this))
+  }
+
+  speedDidChange(){
+    this.setState({speed: this.props.controller.getSpeed()})
+  }
+
+  render(){
+    return(
+      <LayeredProgressbar
+        percentage={this.state.speed * 5 * 0.8}
+        styles={{
+          path: {
+            strokeLinecap: 'butt',
+            //transform: 'rotate(235deg)',
+            transform: 'rotate(215deg)',
+            transformOrigin: 'center center',
+            stroke: 'orange'
+          },
+          trail: {
+            // Tweak the trail color:
+            stroke: "#242424",
+          },
+        }}
+        renderOverlays={() =>
+          getRadialSeparators(20).concat(
+            <div style={{ fontSize: 80, color: 'orange', marginTop: '-15px' }}>
+              {Math.floor(this.state.speed)}
+            </div>,
+            <div style={{ fontSize: 20, color: 'orange', marginTop: '80px' }}>
+              km/h
+            </div>,
+          )
+        }
+      />
+    )
+  }
+}
 // Component that renders an arbitrary
 // number of divs on top of CircularProgressbar,
 // whose content is centered.
@@ -81,37 +122,3 @@ function getRadialSeparators(numSeparators) {
     <RadialSeparator degrees={index * degrees} />
   ));
 }
-
-function Speedometer(props) {
-  return (
-
-    <LayeredProgressbar
-      percentage={props.speed * 5 * 0.8}
-      styles={{
-        path: {
-          strokeLinecap: 'butt',
-          //transform: 'rotate(235deg)',
-          transform: 'rotate(215deg)',
-          transformOrigin: 'center center',
-          stroke: 'orange'
-        },
-        trail: {
-          // Tweak the trail color:
-          stroke: "#242424",
-        },
-      }}
-      renderOverlays={() =>
-        getRadialSeparators(20).concat(
-          <div style={{ fontSize: 80, color: 'orange', marginTop: '-15px' }}>
-            {props.speed}
-          </div>,
-          <div style={{ fontSize: 20, color: 'orange', marginTop: '80px' }}>
-            km/h
-          </div>,
-        )
-      }
-    />
-  );
-}
-
-export default Speedometer;

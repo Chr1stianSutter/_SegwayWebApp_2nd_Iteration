@@ -8,22 +8,17 @@ import VolumeButtons from "../../components/VolumeButtons"
 import ReactDOM from 'react-dom'
 import { Slider, Direction, Button, PlayerIcon, } from 'react-player-controls'
 import AudioController from '../../AudioController.js'
+import SpeedometerController from '../../SpeedometerController.js'
+
 
 //Styles
 import "./style.scss"
-
-
-const speed = 17;
-const percentageBattery = 100;
 
 export default class TachoLayout extends React.Component {
   constructor(props) {
     super(props)
     this.AudioController = new AudioController()
-    this.state = ({
-      volumeLevel: 100,
-      menuChange: false
-    })
+    this.SpeedometerController = new SpeedometerController()
 
   }
 
@@ -38,15 +33,15 @@ export default class TachoLayout extends React.Component {
     return (
       <div>
         <div className="visualizerStyle">
-          <Equalizer size="1200px" />
+          <Equalizer controller={this.AudioController} size="1200px" />
         </div>
 
         <div className="tachoStyle">
-          <Speedometer speed={speed}></Speedometer>
+          <Speedometer controller={this.SpeedometerController} />
         </div>
 
         <div className="batteryStyle">
-          <NewBatteryBar percentage={percentageBattery} />
+          <NewBatteryBar controller={this.SpeedometerController} />
         </div>
 
         <div className="AudioControlButtonBarContainer">
@@ -58,7 +53,13 @@ export default class TachoLayout extends React.Component {
               onClick={(e) => this.AudioController.songPickerToggle(e)}
               className="material-icons"
               >
-                album
+                library_music
+            </Button>
+            <Button
+              onClick={() => {this.SpeedometerController.setSpeed(Math.random() * 20); this.SpeedometerController.setBatteryPower(this.SpeedometerController.getBatteryPower() -5)}}
+              className="material-icons"
+              >
+                label_important
             </Button>
         </div>
 
