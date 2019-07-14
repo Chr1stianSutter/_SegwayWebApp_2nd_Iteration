@@ -23,7 +23,7 @@ export default class NewBatteryBar extends React.Component {
       percentage={this.state.battery * 0.8}
       // Path width must be customized with strokeWidth,
       // since it informs dimension calculations.
-      strokeWidth={5}
+      strokeWidth={3}
       // You can override styles either by specifying this "styles" prop,
       // or by overriding the default CSS here:
       // https://github.com/iqnivek/react-circular-progressbar/blob/master/src/styles.css

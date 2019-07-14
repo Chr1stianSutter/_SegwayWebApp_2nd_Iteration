@@ -47,8 +47,8 @@ export default class Equalizer extends React.Component {
     const container = this.ReferenceToContainerDiv.current;
     if(container) {
       this.wave = new CircularAudioWave(container)
-      this.wave.loadAudio('/circular-audio-wave-master/demo/audio/audio1.mp3').then(() => {
-        
+      this.wave.loadAudio('/circular-audio-wave-master/demo/audio/audio2.mp3').then(() => {
+
         this.props.controller.setEqualizer(this.wave)
       })
     }

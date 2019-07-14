@@ -35,10 +35,10 @@ export default class CoverflowComponent extends React.Component {
             }} />
           </div>
 
-          <img src={'../../../static/img2.png'} alt='title or description' data-action=""/>
-          <img src={'../../../static/img3.jpeg'} alt='title or description' data-action=""/>
-          <img src={'../../../static/img4.png'} alt='title or description' data-action=""/>
-          <img src={'../../../static/img5.jpeg'} alt='title or description' data-action=""/>
+          <img src={'../../../static/img2.png'} alt='title or description' data-action=""  />
+          <img src={'../../../static/img3.jpeg'} alt='title or description' data-action="" />
+          <img src={'../../../static/img4.png'} alt='title or description' data-action="" />
+          <img src={'../../../static/img5.jpeg'} alt='title or description' data-action="" />
         </Coverflow>
       </div>
     )

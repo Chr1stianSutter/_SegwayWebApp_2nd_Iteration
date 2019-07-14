@@ -8,13 +8,13 @@ export default class VolumeButtons extends React.Component {
   }
 
   increaseVolume(e){
-    let volume = this.props.controller.getVolume() + 0.0625
+    let volume = this.props.controller.getVolume() + 0.1
     this.props.controller.setVolume(volume)
     this.setState({volume: this.props.controller.getVolume()})
   }
 
   decreaseVolume(e){
-    let volume = this.props.controller.getVolume() - 0.0625
+    let volume = this.props.controller.getVolume() - 0.1
     this.props.controller.setVolume(volume)
     this.setState({volume: this.props.controller.getVolume()})
   }
